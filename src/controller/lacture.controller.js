@@ -2,6 +2,10 @@ const express = require("express");
 const { body, validationResult } = require("express-validator");
 
 const router = express.Router();
+
+
+
+const Lacture = require("../models/lacture.model");
 const Student = require("../models/student.model");
 const User = require("../models/user.model");
 
@@ -29,10 +33,10 @@ const { check } = require("express-validator");
 router.post(
   "/",
 
-  body("roll_number").isLength({ min: 3 }).withMessage("role is requires"),
+  body("title").isLength({ min: 3 }).withMessage("tile  is required"),
 
-  body("user").isObject().withMessage("must be valid user"),
-  body("batch").isLength({ min: 4 }).withMessage("must be valid password"),
+  body("instructor").isObject().withMessage("must be authenticate instructor"),
+  body("batch").isLength({ min: 4 }).withMessage("must be valid batch"),
 
   async (req, res) => {
     const errors = validationResult(req);
