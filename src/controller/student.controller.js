@@ -31,7 +31,7 @@ router.post(
 
   body(" roll_number").isLength({ min: 3 }).withMessage("role is requires"),
 
-  body("user").isObject().withMessage("must be valid email adress"),
+  body("user").isObject().withMessage("must be valid user"),
   body("batch").isLength({ min: 4 }).withMessage("must be valid password"),
 
   async (req, res) => {

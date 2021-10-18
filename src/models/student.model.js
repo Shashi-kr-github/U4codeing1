@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const User = require("./models/users.model");
+const User = require("./user.model");
 
 const StudentSchema = new mongoose.Schema({
   roll_number: { type: Number, required: true },
@@ -8,6 +8,6 @@ const StudentSchema = new mongoose.Schema({
   batch: { type: String, required: true },
 });
 
-const User = mongoose.model("student" , StudentSchema);
+const Student = mongoose.model("student" , StudentSchema);
 
 module.exports = Student;
