@@ -1,13 +1,11 @@
 const mongoose = require("mongoose");
+const User = require("./models/users.model");
 
 const StudentSchema = new mongoose.Schema({
- 
- name: { type: String, required: true },
- 
-  email: { type: String, required: true },
-  password: { type: String, required: true },
-  profile_url: String,
-  role: { type: String, required: true },
+  roll_number: { type: Number, required: true },
+  user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+
+  batch: { type: String, required: true },
 });
 
 const User = mongoose.model("student" , StudentSchema);

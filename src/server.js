@@ -4,11 +4,12 @@ const connect = require('./config/db');
 
 const UserController = require('./controller/users.controller');
 
-
+const StudentController = require("./controller/student.controller");
 const app = express();
 app.use(express.json());
 
 app.use("/users" , UserController)
+app.use('/students', StudentController)
 
 const start = async () => {
     await connect();
